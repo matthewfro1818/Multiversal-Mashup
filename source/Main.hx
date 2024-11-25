@@ -2,6 +2,7 @@ package;
 
 import lime.app.Application;
 import haxe.EntryPoint;
+import openfl.text.TextFormat;
 import openfl.display.BitmapData;
 import openfl.display.Bitmap;
 import flixel.graphics.FlxGraphic;
@@ -16,6 +17,7 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import openfl.display.Window;
 import flixel.graphics.FlxGraphic;
+import flixel.system.FlxSound;
 import openfl.system.Capabilities;
 
 import openfl.geom.Matrix;
@@ -44,8 +46,14 @@ class Main extends Sprite
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
+	public static var keyAmmo:Array<Int> = [4, 5, 6, 7, 9, 12];
+	public static var dataJump:Array<Int> = [8, 10, 12, 14, 18, 24];
 	public static var fpsVar:FPS;
 	public static var game:FlxGame;
+
+	public static var fps:FpsDisplay;
+
+	public static var applicationName:String = "Friday Night Funkin' | VS. Dave and Bambi 3.0b | Extra Keys Addon 2.0.2";
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
@@ -91,28 +99,16 @@ class Main extends Sprite
 			gameWidth = Math.ceil(stageWidth / zoom);
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
-	
-		ClientPrefs.loadDefaultKeys();
-		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
-		addChild(game);
-	
+
+		initialState = StartStateSelector;
+		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
+
 		#if !mobile
-		fpsVar = new FPS(10, 3, 0xFFFFFF);
-		addChild(fpsVar);
-		Lib.current.stage.align = "tl";
-		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
-		//Lib.application.windows[0].borderless = true;
-		
-		if(fpsVar != null) {
-			fpsVar.visible = ClientPrefs.showFPS;
-		}
+		fps = new FpsDisplay(10, 3, 0xFFFFFF);
+		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
+		fps.defaultTextFormat = fpsFormat;
+		addChild(fps);
 		#end
-
-
-
-
-
-		
 
 		#if html5
 		FlxG.autoPause = false;
@@ -123,6 +119,7 @@ class Main extends Sprite
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
 		#end
 	}
+
 
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
 	// very cool person for real they don't get enough credit for their work
