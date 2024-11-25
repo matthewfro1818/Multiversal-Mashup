@@ -43,8 +43,8 @@ class StrumNote extends FlxPerspectiveSprite
         ['SPACE'],
         ['LEFT0', 'RIGHT0'],
         ['LEFT0', 'SPACE', 'RIGHT0'],
-		['LEFT0', 'DOWN0', 'UP0', 'RIGHT0', 'SPACE','SPACE', 'LEFT0', 'DOWN0', 'UP0', 'RIGHT0'],
-		['LEFTSHARP', 'UPSHARP', 'RIGHTSHARP', 'LEFT0', 'UP0', 'RIGHT0', 'LEFT0', 'DOWN0', 'RIGHT0', 'LEFTSHARP', 'DOWNSHARP', 'RIGHTSHARP']
+	['LEFT0', 'DOWN0', 'UP0', 'RIGHT0', 'SPACE','SPACE', 'LEFT0', 'DOWN0', 'UP0', 'RIGHT0'],
+	['LEFTSHARP', 'UPSHARP', 'RIGHTSHARP', 'LEFT0', 'UP0', 'RIGHT0', 'LEFT0', 'DOWN0', 'RIGHT0', 'LEFTSHARP', 'DOWNSHARP', 'RIGHTSHARP']
     ];
 	public static var colorFromData:Array<Array<Int>> = [
 		[0,1,2,3],
