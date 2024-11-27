@@ -19,4 +19,12 @@ haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
 haxelib git faxe https://github.com/uhrobots/faxe
 haxelib git polymod https://github.com/larsiusprime/polymod.git
 haxelib install hxcpp-debug-server
+haxelib install flxanimate
+haxelib install hxdiscord_rpc
+haxelib install jsonpatch
+haxelib install jsonpath
+haxelib install thx.core
+haxelib install thx.semver
+haxelib install tjson
+haxelib git SScript https://github.com/matthewfro1818/SScript-new
 haxelib list
