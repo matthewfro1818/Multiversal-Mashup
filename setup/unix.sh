@@ -1,8 +1,12 @@
-@echo off
-title Setup - PECG
+#!/bin/sh
+# SETUP FOR MAC AND LINUX SYSTEMS!!!
+# REMINDER THAT YOU NEED HAXE INSTALLED PRIOR TO USING THIS
+# https://haxe.org/download
 cd ..
-
-echo Installing dependencies, please wait...
+echo Makking the main haxelib and setuping folder in same time..
+mkdir ~/haxelib && haxelib setup ~/haxelib
+echo Installing dependencies...
+echo This might take a few moments depending on your internet speed.
 haxelib install lime 8.1.2
 haxelib install openfl 9.3.3
 haxelib install flixel 4.11.0
@@ -27,4 +31,4 @@ haxelib install thx.core
 haxelib install thx.semver
 haxelib install tjson
 haxelib git SScript https://github.com/matthewfro1818/SScript-new
-haxelib list
+echo Finished!
