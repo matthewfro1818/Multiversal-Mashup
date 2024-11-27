@@ -1,8 +1,9 @@
 @echo off
-title Setup - PECG
+color 0a
 cd ..
-
-echo Installing dependencies, please wait...
+@echo on
+echo Installing dependencies...
+echo This might take a few moments depending on your internet speed.
 haxelib install lime 8.1.2
 haxelib install openfl 9.3.3
 haxelib install flixel 4.11.0
@@ -27,4 +28,5 @@ haxelib install thx.core
 haxelib install thx.semver
 haxelib install tjson
 haxelib git SScript https://github.com/matthewfro1818/SScript-new
-haxelib list
+echo Finished!
+pause
