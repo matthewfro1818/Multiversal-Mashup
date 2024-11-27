@@ -43,8 +43,8 @@ class StrumNote extends FlxPerspectiveSprite
         ['SPACE'],
         ['LEFT0', 'RIGHT0'],
         ['LEFT0', 'SPACE', 'RIGHT0'],
-	['LEFT0', 'DOWN0', 'UP0', 'RIGHT0', 'SPACE','SPACE', 'LEFT0', 'DOWN0', 'UP0', 'RIGHT0'],
-	['LEFTSHARP', 'UPSHARP', 'RIGHTSHARP', 'LEFT0', 'UP0', 'RIGHT0', 'LEFT0', 'DOWN0', 'RIGHT0', 'LEFTSHARP', 'DOWNSHARP', 'RIGHTSHARP']
+		['LEFT0', 'DOWN0', 'UP0', 'RIGHT0', 'SPACE','SPACE', 'LEFT0', 'DOWN0', 'UP0', 'RIGHT0'],
+		['LEFTSHARP', 'UPSHARP', 'RIGHTSHARP', 'LEFT0', 'UP0', 'RIGHT0', 'LEFT0', 'DOWN0', 'RIGHT0', 'LEFTSHARP', 'DOWNSHARP', 'RIGHTSHARP']
     ];
 	public static var colorFromData:Array<Array<Int>> = [
 		[0,1,2,3],
@@ -69,7 +69,7 @@ class StrumNote extends FlxPerspectiveSprite
         ["alpha0", "alpha0", "alpha0", "alpha0", 0, "alpha0","alpha0", "alpha0", "alpha0", "alpha0"],
         [0, "alpha0", "alpha0", 1, "alpha0", "alpha0","alpha0", "alpha0", "alpha0", "alpha0"],
         [0, "alpha0", "alpha0", 2, 1, "alpha0","alpha0", "alpha0", "alpha0", "alpha0"],
-	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     ];
 
 	public function new(x:Float, y:Float, leData:Int, player:Int) {
